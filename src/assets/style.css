@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+h1 {
+  color: #901;
+  font-weight: bold;
+  font-size: 130%;
+}
+
+a {
+  color: #b01;
+}
+
+.printuser a {
+  margin-right: 4px;
+}

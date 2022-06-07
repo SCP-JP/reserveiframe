@@ -1,0 +1,26 @@
+{
+  "name": "vite-vue-pages",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite-ssg build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "markdown-it": "^13.0.1",
+    "markdown-it-link-attributes": "^4.0.0",
+    "vite-plugin-markdown": "^2.0.2",
+    "vue": "^3.0.5",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.1.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/server-renderer": "^3.0.7",
+    "@vueuse/head": "^0.5.1",
+    "vite": "^2.1.0",
+    "vite-plugin-pages": "^0.7.2",
+    "vite-plugin-vue-layouts": "^0.2.2",
+    "vite-ssg": "^0.9.1"
+  }
+}
