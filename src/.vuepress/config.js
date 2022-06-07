@@ -6,6 +6,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   title: "翻訳予約index",
+  dest: 'dist/',
   themeConfig: {
     repo: '',
     editLinks: false,
