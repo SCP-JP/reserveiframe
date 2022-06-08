@@ -8,13 +8,13 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="description" content="">
     
-    <link rel="preload" href="/assets/css/1.styles.3b062901.css" as="style"><link rel="preload" href="/assets/js/app.28fd9233.js" as="script"><link rel="preload" href="/assets/js/3.aaaf6891.js" as="script"><link rel="preload" href="/assets/js/5.9861de29.js" as="script"><link rel="preload" href="/assets/js/2.6d91f622.js" as="script"><link rel="prefetch" href="/assets/js/4.76d714db.js">
+    <link rel="preload" href="/assets/css/1.styles.3b062901.css" as="style"><link rel="preload" href="/assets/js/app.37b69acd.js" as="script"><link rel="preload" href="/assets/js/3.aaaf6891.js" as="script"><link rel="preload" href="/assets/js/5.ee154ff8.js" as="script"><link rel="preload" href="/assets/js/2.6d91f622.js" as="script"><link rel="prefetch" href="/assets/js/4.76d714db.js">
     <link rel="stylesheet" href="/assets/css/1.styles.3b062901.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div id="page-content"><h1><span>このページは翻訳予約されています</span></h1> <div class="content__default"><p><span class="printuser"><a href="http://www.wikidot.com/user:info/user" target="_blank">user</a></span> <span>2020-01-01</span>
+    <div id="app" data-server-rendered="true"><div id="page-content"><h1><span>このページは翻訳予約されています</span></h1> <div class="content__default"><p><span class="printuser"><a href="http://www.wikidot.com/user:info/user" target="_blank">user</a></span> <span>2022-03-10</span>
   -
-  <span>2020-01-01</span></p></div></div><div class="global-ui"></div></div>
-    <script src="/assets/js/app.28fd9233.js" defer></script><script src="/assets/js/3.aaaf6891.js" defer></script><script src="/assets/js/5.9861de29.js" defer></script><script src="/assets/js/2.6d91f622.js" defer></script>
+  <span>2022-06-10</span></p></div></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.37b69acd.js" defer></script><script src="/assets/js/3.aaaf6891.js" defer></script><script src="/assets/js/5.ee154ff8.js" defer></script><script src="/assets/js/2.6d91f622.js" defer></script>
   </body>
 </html>
