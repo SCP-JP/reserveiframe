@@ -1,6 +1,8 @@
 # Reserve iframe
-[![Change Vercel environment And Redeploy](https://github.com/RTa-scp/reserveiframe/actions/workflows/vercel.yaml/badge.svg)](https://github.com/RTa-scp/reserveiframe/actions/workflows/vercel.yaml)
-[![Expiration Checks](https://github.com/RTa-scp/reserveiframe/actions/workflows/expirationcheck.yaml/badge.svg)](https://github.com/RTa-scp/reserveiframe/actions/workflows/expirationcheck.yaml)
+[![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/Change%20Vercel%20environment%20And%20Redeploy?label=Vercel&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/vercel.yaml)
+[![Expiration Checks](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/Expiration%20Checks?label=Expiration%20Checks&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/expirationcheck.yaml)
+[![deploy](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/deploy?label=Deploy&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/pages.yaml)
+
 
 This is a WebApp that generates an iframe for checking reserved translations for SCP-JP.
 This WebApp consists of three repositories.
