@@ -1,0 +1,32 @@
+name: "Change Vercel environment And Redeploy"
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Create dot env file
+        run: |
+          touch .env
+          echo "VERCEL_PROJECT_ID='${{ secrets.VERCEL_PROJECT_ID }}'" >> .env
+          echo "VERCEL_ENV_ID='${{ secrets.VERCEL_ENV_ID }}'" >> .env
+          echo "VERCEL_TOKEN='${{ secrets.VERCEL_TOKEN }}'" >> .env
+          echo "PRIVATE_KEY='${{ secrets.PRIVATE_KEY }}'" >> .env
+          echo "APP_ID='${{ secrets.APP_ID }}'" >> .env
+          echo "INSTALLATION_ID='${{ secrets.INSTALLATION_ID }}'" >> .env
+          echo "REPO_ID='${{ secrets.REPO_ID }}'" >> .env
+          echo "REPO_NAME='${{ secrets.REPO_NAME }}'" >> .env
+          echo "ACCESS_TOKEN_REPO='${{ secrets.ACCESS_TOKEN_REPO }}'" >> .env
+      - name: Run Python
+        run: python changeenv.py
