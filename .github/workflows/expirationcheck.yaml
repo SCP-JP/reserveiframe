@@ -5,7 +5,7 @@ on:
     - cron: '0 15 * * *'
 
 jobs:
-  checks:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,7 +28,7 @@ jobs:
           if (git diff --shortstat | grep '[0-9]'); then \
             git add .; \
             git commit -m "🚿 Delete expired translations by github-actions"; \
-            git push origin HEAD:${GITHUB_REF}; \
+            git push origin reserve; \
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
