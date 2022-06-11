@@ -3,4 +3,4 @@ pytz
 requests
 python-dotenv
 githubapps.py
-httpx
+PyGithub
