@@ -10,5 +10,11 @@ export default ({
   router, // the router instance for the app
   siteData // site metadata
 }) => {
-  // ...apply enhancements for the site.
+  router.beforeEach((to, from, next) => {
+    if (to.path.match(/%20/g)) {
+      let reservepath = to.path.replace(/%20/g, '-').toLowerCase()
+      next(reservepath)
+    }
+    next();
+  });
 }
