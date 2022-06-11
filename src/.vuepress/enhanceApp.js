@@ -11,8 +11,8 @@ export default ({
   siteData // site metadata
 }) => {
   router.beforeEach((to, from, next) => {
-    if (to.path.match(/%20/g)) {
-      let reservepath = to.path.replace(/%20/g, '-').toLowerCase()
+    if ((to.path.match(/%20/g))||(to.path.match(/:/g))) {
+      let reservepath = to.path.replace(/%20/g, '-').replace(/:/g, '/').toLowerCase()
       next(reservepath)
     }
     next();
