@@ -1,0 +1,31 @@
+name: "Vercel surveillance"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Normal
+        id: normal_execution
+        run: echo "Normal execution"
+        
+      - name: Show execution status
+        run: echo ${{ steps.normal_execution.outcome }}
+      
+      - name: Error
+        # エラーでも処理を継続する
+        continue-on-error: true
+        # あとで実行結果を参照するため、IDを振っておく
+        id: error_execution
+        # ディレクトリが存在することで、2回目は確実にエラーになる
+        run: |
+          mkdir hoge
+          mkdir hoge
+      - name: Error handling
+        if: ${{ steps.error_execution.outcome == 'failure' }}
+        run: |
+          echo "Error handling"
+          echo ${{ steps.error_execution.outcome }}
+          exit 1
