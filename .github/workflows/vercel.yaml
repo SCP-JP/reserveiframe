@@ -31,3 +31,5 @@ jobs:
           echo "ACCESS_TOKEN_REPO='${{ secrets.ACCESS_TOKEN_REPO }}'" >> .env
       - name: Run Python
         run: python changeenv.py
+      - name: Change README.md
+        run: python changereadme.py
