@@ -33,3 +33,15 @@ jobs:
         run: python changeenv.py
       - name: Change README.md
         run: python changereadme.py
+      - name: Push auto-fixed files
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name 'ExpirationChecks[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "🔧 Fixed a badge in README by github-actions"; \
+            git push origin reserve; \
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
