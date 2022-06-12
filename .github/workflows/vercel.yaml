@@ -2,7 +2,7 @@ name: "Change Vercel environment And Redeploy"
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0,20,40 * * * *'
 
 jobs:
   build:
