@@ -19,7 +19,7 @@ def main():
     match = re.search(pattern, readme)
     if match:
         now = get_time().replace(' ', '%20')
-        readme = re.sub(pattern, 'label=Vercel%20' + now + '&style=flat-square', readme)
+        readme = re.sub(pattern, 'label=Vercel%20run:%20' + now + '&style=flat-square', readme)
     with open(readme_path, 'w') as f:
         f.write(readme)
 
