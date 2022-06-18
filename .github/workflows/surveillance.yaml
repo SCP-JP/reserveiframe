@@ -1,38 +1,53 @@
-name: "Vercel surveillance"
+name: "[check] Vercel surveillance"
 
 on:
+  schedule:
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Normal
-        id: normal_execution
-        run: echo "Normal execution"
-        
+      - uses: actions/checkout@v3
+        with:
+          ref: reserve
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Create dot env file
+        run: |
+          touch .env
+          echo "APISERVER_DOMAIN='${{ secrets.APISERVER_DOMAIN }}'" >> .env
+      - name: Check Vercel surveillance
+        continue-on-error: true
+        id: vercelsurveillance
+        run: python vercelsurveillance.py
       - name: Show execution status
-        run: echo ${{ steps.normal_execution.outcome }}
-      
-      
-      - name: Invoke workflow
+        run: echo ${{ steps.vercelsurveillance.outcome }}
+
+      - name: Change README.md badge
         uses: benc-uk/workflow-dispatch@v1.1
         with:
-          workflow: "Change Vercel environment And Redeploy"
+          workflow: "[docs] Change readme badge"
           token: ${{ secrets.ACCESS_TOKEN_REPO }}
-      
-      - name: Error
-        # エラーでも処理を継続する
-        continue-on-error: true
-        # あとで実行結果を参照するため、IDを振っておく
-        id: error_execution
-        # ディレクトリが存在することで、2回目は確実にエラーになる
-        run: |
-          mkdir hoge
-          mkdir hoge
+          inputs: '{ "type": "survive", "debug": "true" }'
+
+      - name: "[change] Change Vercel environment And Redeploy"
+        uses: benc-uk/workflow-dispatch@v1.1
+        if: ${{ steps.vercelsurveillance.outcome == 'failure' }}
+        with:
+          workflow: "[change] Change Vercel environment And Redeploy"
+          token: ${{ secrets.ACCESS_TOKEN_REPO }}
+
       - name: Error handling
-        if: ${{ steps.error_execution.outcome == 'failure' }}
+        if: ${{ steps.vercelsurveillance.outcome == 'failure' }}
         run: |
           echo "Error handling"
-          echo ${{ steps.error_execution.outcome }}
+          echo ${{ steps.vercelsurveillance.outcome }}
           exit 1
+      

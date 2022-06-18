@@ -1,25 +1,31 @@
-name: deploy
+name: "[docs] deploy"
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - reserve
     paths-ignore:
     - '.github/**'
+    - '*.py'
+    - 'README.md'
+    - 'src/reserve/notdelete.md'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+        with:
+          ref: reserve
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 7.0.0
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
-        with:
-          cache: pnpm
+#         with:
+#           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
@@ -29,7 +35,15 @@ jobs:
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        continue-on-error: true
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           cname: reserve.scp-jp.org
+
+      - name: Change README.md badge
+        uses: benc-uk/workflow-dispatch@v1.1
+        with:
+          workflow: "[docs] Change readme badge"
+          token: ${{ secrets.ACCESS_TOKEN_REPO }}
+          inputs: '{ "type": "deploy", "debug": "true" }'

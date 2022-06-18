@@ -1,9 +1,11 @@
+from re import I
 import requests
 import json
 import os
 from dotenv import load_dotenv
 import githubapps
 from github import Github
+import sys
 
 def get_env(env_value):
     # Vercelの環境変数を取得
@@ -33,6 +35,9 @@ def change_env(env_value):
     response = requests.patch(url, headers=headers, json=data)
     if response.status_code == 200:
         return 'change_env: Success'
+    else:
+        print("::error:: Not Changing Environment")
+        sys.exit(1)
 
 
 def redeploy(env_value, commit_sha):
@@ -56,7 +61,9 @@ def redeploy(env_value, commit_sha):
     response = requests.post(url, headers=headers, json=data)
     if response.status_code == 200:
         return 'redeploy: Success'
-
+    else:
+        print("::error:: Not Redeploying")
+        sys.exit(1)
 
 def main():
     dotenv_path = os.path.join(os.path.dirname(__file__), '.env')

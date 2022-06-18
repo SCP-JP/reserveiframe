@@ -3,6 +3,7 @@ node_modules
 /dist
 /venv
 .env
+data/*
 
 # local env files
 .env.local

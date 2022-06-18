@@ -1,4 +1,4 @@
-name: "Change Vercel environment And Redeploy"
+name: "[change] Change Vercel environment And Redeploy"
 
 on:
   workflow_dispatch:
@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: reserve
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -30,18 +32,18 @@ jobs:
           echo "REPO_NAME='${{ secrets.REPO_NAME }}'" >> .env
           echo "ACCESS_TOKEN_REPO='${{ secrets.ACCESS_TOKEN_REPO }}'" >> .env
       - name: Run Python
+        continue-on-error: true
+        id: vercel
         run: python changeenv.py
-      - name: Change README.md
-        run: python changereadme.py
-      - name: Push auto-fixed files
+      - name: Change README.md badge
+        uses: benc-uk/workflow-dispatch@v1.1
+        with:
+          workflow: "[docs] Change readme badge"
+          token: ${{ secrets.ACCESS_TOKEN_REPO }}
+          inputs: '{ "type": "vercel", "debug": "true" }'
+      - name: Error handling
+        if: ${{ steps.vercel.outcome == 'failure' }}
         run: |
-          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          git config --global user.name 'ExpirationChecks[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add .; \
-            git commit -m "🔧 Fixed a badge in README by github-actions"; \
-            git push origin reserve; \
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "Error handling"
+          echo ${{ steps.vercel.outcome }}
+          exit 1

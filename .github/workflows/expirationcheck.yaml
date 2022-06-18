@@ -1,6 +1,7 @@
-name: Expiration Checks
+name: "[check] Expiration Checks"
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 15 * * *'
 
@@ -20,15 +21,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run Python
         run: python expirationchecks.py
-      - name: Push auto-fixed files
-        run: |
-          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          git config --global user.name 'ExpirationChecks[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add .; \
-            git commit -m "🚿 Delete expired translations by github-actions"; \
-            git push origin reserve; \
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Change README.md badge
+        uses: benc-uk/workflow-dispatch@v1.1
+        with:
+          workflow: "[docs] Change readme badge"
+          token: ${{ secrets.ACCESS_TOKEN_REPO }}
+          inputs: '{ "type": "expiration", "debug": "true" }'
