@@ -13,7 +13,7 @@ for filename in reserves:
         try:
             endtime = dt.strptime(data['endtime'], '%Y-%m-%d').date()
             print(filename,"\t\t" ,endtime)
-            if endtime <= today:
+            if endtime < today:
                 print('{} is expired'.format(filename))
                 os.remove(filename)
         except:
