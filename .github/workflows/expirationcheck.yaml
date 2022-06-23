@@ -28,3 +28,16 @@ jobs:
           workflow: "[docs] Change readme badge"
           token: ${{ secrets.ACCESS_TOKEN_REPO }}
           inputs: '{ "type": "expiration", "debug": "true" }'
+
+      - name: Push auto-fixed files
+        run: |
+          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+          git config --global user.name 'FixBadge[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if (git diff --shortstat | grep '[0-9]'); then \
+            git add .; \
+            git commit -m "🚿 Delete expired translations by github-actions"; \
+            git push origin HEAD:reserve; \
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
