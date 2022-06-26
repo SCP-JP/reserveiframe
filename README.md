@@ -1,6 +1,6 @@
 # Reserve iframe
 ## Deploy and Expiration Checks
-[![deploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bdocs%5D%20deploy?label=Deploy&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/pages.yaml)
+[![deploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bdocs%5D%20deploy/reserve?label=Deploy&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/pages.yaml)
 [![Expiration Checks](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/expirationcheck.yaml)
 
 ## Vercel surveillance
