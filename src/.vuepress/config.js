@@ -7,6 +7,7 @@ module.exports = {
    */
   title: "翻訳予約index",
   dest: 'dist/',
+  base: '/reserveiframe/',
   themeConfig: {
     repo: '',
     editLinks: false,
