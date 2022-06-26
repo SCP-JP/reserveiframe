@@ -39,7 +39,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          cname: reserve.scp-jp.org
 
       - name: Change README.md badge
         uses: benc-uk/workflow-dispatch@v1.1
