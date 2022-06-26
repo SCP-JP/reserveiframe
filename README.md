@@ -1,16 +1,16 @@
 # Reserve iframe
 ## Deploy and Expiration Checks
-[![deploy](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/%5Bdocs%5D%20deploy?label=Deploy&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/pages.yaml)
-[![Expiration Checks](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/expirationcheck.yaml)
+[![deploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bdocs%5D%20deploy?label=Deploy&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/pages.yaml)
+[![Expiration Checks](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/expirationcheck.yaml)
 
 ## Vercel surveillance
-[![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/%5Bchange%5D%20Change%20Vercel%20environment%20And%20Redeploy?label=Vercel&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/vercel.yaml)
-[![surveillance](https://img.shields.io/github/workflow/status/RTa-scp/reserveiframe/%5Bcheck%5D%20Vercel%20surveillance?label=Survive&style=flat-square)](https://github.com/RTa-scp/reserveiframe/actions/workflows/surveillance.yaml)
+[![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bchange%5D%20Change%20Vercel%20environment%20And%20Redeploy?label=Vercel&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/vercel.yaml)
+[![surveillance](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Vercel%20surveillance?label=Survive&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/surveillance.yaml)
 
 
 This is a WebApp that generates an iframe for checking reserved translations for SCP-JP.
 This WebApp consists of three repositories.
- - [RTa-scp/reserveiframe](https://github.com/RTa-scp/reserveiframe)
+ - [SCP-JP/reserveiframe](https://github.com/SCP-JP/reserveiframe)
  - [RTa-technology/reserveapp](https://github.com/RTa-technology/reserveapp)
  - [RTa-technology/githubapps.py](https://github.com/RTa-technology/githubapps.py)
 When a get request is made to [zzzzzzz](#), files in this repository are edited/deleted.
