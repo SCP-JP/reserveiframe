@@ -11,7 +11,7 @@
 This is a WebApp that generates an iframe for checking reserved translations for SCP-JP.
 This WebApp consists of three repositories.
  - [SCP-JP/reserveiframe](https://github.com/SCP-JP/reserveiframe)
- - [RTa-technology/reserveapp](https://github.com/RTa-technology/reserveapp)
+ - [SCP-JP/reserveapp](https://github.com/SCP-JP/reserveapp)
  - [RTa-technology/githubapps.py](https://github.com/RTa-technology/githubapps.py)
 When a get request is made to [zzzzzzz](#), files in this repository are edited/deleted.
 Github Pages generates html at [xxx/reserve/_default/yyyyyy](#) after seeing the update.
