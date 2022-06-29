@@ -33,7 +33,7 @@ def main():
         url = row[2]
         user = row[1].replace('_', '-').replace(' ', '-').lower()
         # 日付形式を%d/%m/%Yから%Y-%m-%d変更する
-        starttime = datetime.strptime(row[0], '%m/%d/%Y').strftime('%Y-%m-%d')
+        starttime = datetime.strptime(row[0], '%Y/%m/%d').strftime('%Y-%m-%d')
         endtime = datetime.strptime(row[4], '%Y/%m/%d').strftime('%Y-%m-%d')
         # write
         output_file = open('src/reserve/_default/{}.md'.format(url), 'w', encoding='utf-8')
