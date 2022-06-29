@@ -5,7 +5,7 @@
 
 ## Vercel surveillance
 [![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bchange%5D%20Change%20Vercel%20environment%20And%20Redeploy?label=Vercel%20run:%202022-06-30%2001:05&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/vercel.yaml)
-[![surveillance](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Vercel%20surveillance?label=Survive%20run:%202022-06-30%2000:35&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/surveillance.yaml)
+[![surveillance](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Vercel%20surveillance?label=Survive%20run:%202022-06-30%2001:06&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/surveillance.yaml)
 
 
 This is a WebApp that generates an iframe for checking reserved translations for SCP-JP.
