@@ -1,7 +1,7 @@
 # Reserve iframe
 ## Deploy and Expiration Checks
 [![deploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bdocs%5D%20deploy/reserve?label=Deploy%20run:%202022-07-07%2010:03&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/pages.yaml)
-[![Expiration Checks](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks%20date:%202022-07-10&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/expirationcheck.yaml)
+[![Expiration Checks](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks%20date:%202022-07-11&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/expirationcheck.yaml)
 
 ## Vercel surveillance
 [![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bchange%5D%20Change%20Vercel%20environment%20And%20Redeploy?label=Vercel%20run:%202022-07-11%2000:10&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/vercel.yaml)
