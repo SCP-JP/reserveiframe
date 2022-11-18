@@ -1,42 +1,42 @@
-name: "[docs] Change readme badge"
+# name: "[docs] Change readme badge"
 
-on:
-  workflow_dispatch:
-    inputs:
-      type:
-        description: 'Type'
-        required: true
-        default: 'vercel'
-      debug:
-        description: 'Debug'
-        required: false
-        default: 'false'
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       type:
+#         description: 'Type'
+#         required: true
+#         default: 'vercel'
+#       debug:
+#         description: 'Debug'
+#         required: false
+#         default: 'false'
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: main
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.9'
-          architecture: 'x64'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Change README.md
-        run: python changereadme.py ${{github.event.inputs.type}}
-      - name: Push auto-fixed files
-        run: |
-          git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
-          git config --global user.name 'FixBadge[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          if (git diff --shortstat | grep '[0-9]'); then \
-            git add .; \
-            git commit -m "🔧 Fixed a badge in README by github-actions"; \
-            git push origin main; \
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           ref: main
+#       - name: Setup Python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: '3.9'
+#           architecture: 'x64'
+#       - name: Install dependencies
+#         run: pip install -r requirements.txt
+#       - name: Change README.md
+#         run: python changereadme.py ${{github.event.inputs.type}}
+#       - name: Push auto-fixed files
+#         run: |
+#           git remote set-url origin https://github-actions:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}
+#           git config --global user.name 'FixBadge[bot]'
+#           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+#           if (git diff --shortstat | grep '[0-9]'); then \
+#             git add .; \
+#             git commit -m "🔧 Fixed a badge in README by github-actions"; \
+#             git push origin main; \
+#           fi
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
