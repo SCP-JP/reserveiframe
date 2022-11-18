@@ -22,12 +22,12 @@ jobs:
       - name: Run Python
         run: python expirationchecks.py
 
-      - name: Change README.md badge
-        uses: benc-uk/workflow-dispatch@v1.1
-        with:
-          workflow: "[docs] Change readme badge"
-          token: ${{ secrets.ACCESS_TOKEN_REPO }}
-          inputs: '{ "type": "expiration", "debug": "true" }'
+#       - name: Change README.md badge
+#         uses: benc-uk/workflow-dispatch@v1.1
+#         with:
+#           workflow: "[docs] Change readme badge"
+#           token: ${{ secrets.ACCESS_TOKEN_REPO }}
+#           inputs: '{ "type": "expiration", "debug": "true" }'
 
       - name: Push auto-fixed files
         run: |
