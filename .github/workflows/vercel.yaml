@@ -35,12 +35,12 @@ jobs:
         continue-on-error: true
         id: vercel
         run: python changeenv.py
-      - name: Change README.md badge
-        uses: benc-uk/workflow-dispatch@v1.1
-        with:
-          workflow: "[docs] Change readme badge"
-          token: ${{ secrets.ACCESS_TOKEN_REPO }}
-          inputs: '{ "type": "vercel", "debug": "true" }'
+#       - name: Change README.md badge
+#         uses: benc-uk/workflow-dispatch@v1.1
+#         with:
+#           workflow: "[docs] Change readme badge"
+#           token: ${{ secrets.ACCESS_TOKEN_REPO }}
+#           inputs: '{ "type": "vercel", "debug": "true" }'
       - name: Error handling
         if: ${{ steps.vercel.outcome == 'failure' }}
         run: |
