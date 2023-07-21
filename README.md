@@ -1,13 +1,4 @@
 # Reserve iframe
-## Deploy and Expiration Checks
-[![deploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bdocs%5D%20deploy/reserve?label=Deploy&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/pages.yaml)
-[![Expiration Checks](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Expiration%20Checks?label=Expiration%20Checks&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/expirationcheck.yaml)
-
-## Vercel surveillance
-[![Change Vercel environment And Redeploy](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bchange%5D%20Change%20Vercel%20environment%20And%20Redeploy?label=Vercel&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/vercel.yaml)
-[![surveillance](https://img.shields.io/github/workflow/status/SCP-JP/reserveiframe/%5Bcheck%5D%20Vercel%20surveillance?label=Survive&style=flat-square)](https://github.com/SCP-JP/reserveiframe/actions/workflows/surveillance.yaml)
-
-
 This is a WebApp that generates an iframe for checking reserved translations for SCP-JP.
 This WebApp consists of three repositories.
  - [SCP-JP/reserveiframe](https://github.com/SCP-JP/reserveiframe)
